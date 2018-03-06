@@ -1,0 +1,78 @@
+﻿@using Knockout.Validation.Exstensions
+@using Newtonsoft.Json
+@using Mvc4KnockoutCRUD
+<script src="@Url.Content("~/Scripts/jquery-ui-1.9.2.js")"></script>
+<script src="~/Scripts/knockout-3.3.0.js"></script>
+<script src="@Url.Content("~/Scripts/knockout-2.2.0.debug.js")" type="text/javascript"></script>
+<script src="~/Scripts/knockout.mapping-latest.js"></script>
+<script src="@Url.Content("~/Scripts/knockout.mapping-latest.debug.js")" type="text/javascript"></script>
+@*<script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>*@
+@*<script src="~/Scripts/knockout.validation.js"></script>*@
+<script src="~/Scripts/knockout.validation.debug.js"></script>
+
+@section scripts {
+    <script type="text/javascript">
+        @*Пространство имен для раздела "Заказы"*@
+
+        var product = {};
+
+        product.urls =  {};
+
+        product.urls.ValidateContact = '@Url.Action("Product", "Product")';
+        var viewModel = @Html.Raw(JsonConvert.SerializeObject(Model));
+
+        @Html.BuidKoBaseModel(m=>m, "baseModel", "product")
+    </script>
+    @Scripts.Render("~/bundles/productValidate")
+}
+<h2>title</h2>
+<div id="root">
+    <div>
+        <div>
+            <label for="name" data-bind="text: Name.DisplayName">Name</label>
+            <input data-bind="value: Name" type="text" id="txt1" title="Title" />
+        </div>
+
+        <div>
+            <label for="category" data-bind="text: Description.DisplayName">Description</label>
+            <input data-bind="value: Description" type="text" title="Class" />
+        </div>
+
+        <div>
+            <label for="category" data-bind="text: Email.DisplayName">Email</label>
+            <input data-bind="value: Email" type="text" title="Class" />
+        </div>
+
+        <div>
+            <label for="category" data-bind="text: Number10.DisplayName">Number10</label>
+            <input data-bind="value: Number10" type="text" title="Class" />
+        </div>
+
+        <div>
+            <label for="category" data-bind="text: ServerValidationField.DisplayName">ServerValidationField</label>
+            <input data-bind="value: ServerValidationField" type="text" title="Class" />
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-5">
+                <label for="">список</label>
+                <select data-bind="options: Options, optionsValue: 'Value',optionsText: 'Key',  value: SelectedItemS"></select>
+            </div>
+        </div>
+        <div>
+            <label for="category" data-bind="text: Desc1.DisplayName">Desc1</label>
+            <input data-bind="value: Desc1" type="text" title="Class" />
+        </div>
+        <div>
+            <button data-bind="click: $root.create">O.K</button>
+        </div>
+    </div>
+    <div data-bind="if: ShowSummaryHints() && Errors().length > 0">
+        Осталось заполнить следующие поля:
+        <ul data-bind="foreach: ControlsWithErrors">
+            <li data-bind="text: $data"></li>
+        </ul>
+    </div>
+</div>    
+

@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4KnockoutCRUD", "Mvc4KnockoutCRUD\Mvc4KnockoutCRUD.csproj", "{BCA3807F-60E6-49C8-BF76-103BEC757E61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BD55ABEC-4088-475E-B19E-F0321DD9FAD6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Knockout.Validation", "Cknokout.Validation\Knockout.Validation.csproj", "{DB8D024B-DE65-4607-8FCA-B3ED211C68A6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mvc4KnockoutCRUD\\Mvc4KnockoutCRUD.csproj
+		SccProjectName1 = Mvc4KnockoutCRUD
+		SccLocalPath1 = Mvc4KnockoutCRUD
+		SccProjectUniqueName2 = Cknokout.Validation\\Knockout.Validation.csproj
+		SccProjectName2 = Cknokout.Validation
+		SccLocalPath2 = Cknokout.Validation
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCA3807F-60E6-49C8-BF76-103BEC757E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA3807F-60E6-49C8-BF76-103BEC757E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA3807F-60E6-49C8-BF76-103BEC757E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA3807F-60E6-49C8-BF76-103BEC757E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8D024B-DE65-4607-8FCA-B3ED211C68A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8D024B-DE65-4607-8FCA-B3ED211C68A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8D024B-DE65-4607-8FCA-B3ED211C68A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8D024B-DE65-4607-8FCA-B3ED211C68A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

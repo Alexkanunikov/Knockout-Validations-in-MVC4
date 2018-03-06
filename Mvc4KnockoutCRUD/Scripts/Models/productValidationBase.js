@@ -1,0 +1,40 @@
+﻿
+$(function (section) {
+	section.baseModel1111 = function () {
+		var model = this;
+		model.InitValidation = function () {
+			ko.validation.configure({ errorElementClass: 'validation-error', decorateElement: true, registerExtenders: true, insertMessages: true }); model.SetUpAllServerErrors = function (errors) { for (var name in errors) { var value = errors[name]; model[name].SetUpServerError(errors[name], name); } }; model['Name'].extend({ required: { message: 'Name is required' } }); model['Name'].HasSercverError = false; model['Name'].ServerMessage = ''; model['Name'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['Name'], { validator: function (val, someOtherVal) { return !model['Name'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['Name'].DisplayName = ko.observable('Имя'); model['Description'].extend({
+				minLength: {
+					params: 4,
+					message: 'min length is 4'
+				}
+			}); model['Description'].extend({
+				maxLength: {
+					params: 10,
+					message: 'max length is 10'
+				}
+			}); model['Description'].extend({ required: { message: 'Description is required' } }); model['Description'].HasSercverError = false; model['Description'].ServerMessage = ''; model['Description'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['Description'], { validator: function (val, someOtherVal) { return !model['Description'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['Description'].DisplayName = ko.observable('описание ееее'); model['Email'].extend({
+				pattern: {
+					message: 'wrong email address',
+					params: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/
+				}
+			}); model['Email'].HasSercverError = false; model['Email'].ServerMessage = ''; model['Email'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['Email'], { validator: function (val, someOtherVal) { return !model['Email'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['Email'].DisplayName = ko.observable('Email'); model['Number10'].extend({
+				pattern: {
+					message: 'Error',
+					params: /^(0|[1-9][0-9]*)$/
+				}
+			}); model['Number10'].HasSercverError = false; model['Number10'].ServerMessage = ''; model['Number10'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['Number10'], { validator: function (val, someOtherVal) { return !model['Number10'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['Number10'].DisplayName = ko.observable('Number10'); model['ServerValidationField'].extend({ required: { message: 'Поле является обязательным' } }); model['ServerValidationField'].HasSercverError = false; model['ServerValidationField'].ServerMessage = ''; model['ServerValidationField'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['ServerValidationField'], { validator: function (val, someOtherVal) { return !model['ServerValidationField'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['ServerValidationField'].DisplayName = ko.observable('ServerValidationField'); model['SelectedItem'].HasSercverError = false; model['SelectedItem'].ServerMessage = ''; model['SelectedItem'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['SelectedItem'], { validator: function (val, someOtherVal) { return !model['SelectedItem'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['SelectedItem'].DisplayName = ko.observable('SelectedItem'); model['Desc1'].extend({
+				required: {
+					message: 'Поле является обязательным',
+					onlyIf: function () {
+						return model['SelectedItem']() === 1;
+					}
+				}
+			}); model['Desc1'].HasSercverError = false; model['Desc1'].ServerMessage = ''; model['Desc1'].SetUpServerError = function (errorMsq, key) { var ruleName = model[key].rules()[model[key].rules().length - 1]; var rule = ko.validation.rules[ruleName['rule']]; rule.message = errorMsq; model[key].HasSercverError = true; ko.validation.validateObservable(model[key]); model[key].HasSercverError = false; }; ko.validation.addAnonymousRule(model['Desc1'], { validator: function (val, someOtherVal) { return !model['Desc1'].HasSercverError; }, message: 'Something must be really wrong!', params: true }); model['Desc1'].DisplayName = ko.observable('описание 11111');
+		}; model['Name'].DisplayName = ko.observable('Имя'); model['Description'].DisplayName = ko.observable('описание ееее'); model['Email'].DisplayName = ko.observable('Email'); model['Number10'].DisplayName = ko.observable('Number10'); model['ServerValidationField'].DisplayName = ko.observable('ServerValidationField');
+		model['SelectedItem'].DisplayName = ko.observable('SelectedItem'); model['Desc1'].DisplayName = ko.observable('описание 11111');;
+		model.Errors = ko.validation.group(model);
+		model.InitValidation();
+		model.ValidatedProperties = ko.observableArray(); model.ValidatedProperties.push(model['Name']); model.ValidatedProperties.push(model['Description']); model.ValidatedProperties.push(model['Email']); model.ValidatedProperties.push(model['Number10']); model.ValidatedProperties.push(model['ServerValidationField']); model.ValidatedProperties.push(model['Desc1']); model.ControlsWithErrors = ko.computed(function () { var filtered = ko.utils.arrayFilter(model.ValidatedProperties(), function (item) { return item.isValid() != true; }); return ko.utils.arrayMap(filtered, function (item) { return item.DisplayName; }); }, model);
+	};
+}(product));
